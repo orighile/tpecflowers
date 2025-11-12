@@ -1,0 +1,15 @@
+# System files
+node_modules/
+.vscode/
+.idea/
+.DS_Store
+*.log
+
+# Build
+dist/
+build/
+.next/
+
+# Environment
+.env
+.env.local
