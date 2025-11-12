@@ -1,0 +1,215 @@
+/* Add this to your existing App.css file */
+
+/* Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero-left h1, .hero-left p, .hero-left .hero-buttons {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero-left p { animation-delay: 0.2s; }
+.hero-left .hero-buttons { animation-delay: 0.4s; }
+
+/* Navbar */
+.nav-link {
+    color: #343a40;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f85faf;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f85faf;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.premium-btn {
+    transition: transform 0.3s ease;
+}
+.premium-btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(240, 57, 164, 0.4);
+}
+
+.quote-btn:hover {
+    background: #f85faf;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.hero-right .image-card img {
+    transition: transform 0.4s ease;
+}
+
+.hero-right .image-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Services Section */
+.service-card {
+    cursor: pointer;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Section */
+.gallery-item {
+    cursor: pointer;
+    animation: zoomIn 0.6s ease-out forwards;
+}
+.gallery-item .gallery-image, .gallery-item .gallery-overlay {
+    transition: all 0.4s ease;
+}
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+}
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Footer */
+.social-link, .footer-link {
+    transition: all 0.3s ease;
+}
+.social-link:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+.footer-link:hover {
+    color: #f85faf;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(200, 74, 224, 0.4);
+}
+
+/* --- Responsive Styles --- */
+
+/* Tablets and larger phones */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1.2rem 5%;
+    }
+    .hero, .aboutSection, .servicesSection, .gallerySection, .contactSection, .description {
+        padding: 4rem 5%;
+    }
+    .heroContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .heroLeft {
+        max-width: 100%;
+    }
+    .heroButtons {
+        justify-content: center;
+    }
+    .heroRight {
+        justify-content: center;
+        margin-top: 2rem;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        z-index: 1001; /* Ensure it's above the nav links */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 70%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        right: 0; /* Slide in */
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
+    .heroH1 {
+        font-size: 2.5rem;
+    }
+
+    .sectionTitle, .descH1 {
+        font-size: 2rem;
+    }
+
+    .servicesGrid, .galleryGrid, .contactContent, .footerContent {
+        grid-template-columns: 1fr;
+    }
+
+    .footerContent {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
