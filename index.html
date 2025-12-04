@@ -1,13 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/assets/image/logo.jpeg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TPEC Flower</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.jpeg" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TPEC Flowers | Flower Wall Backdrop Rental</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            'brand-gold': '#c5a774',
+            'brand-dark': '#5C5454',
+            'blush': '#F1D4D4',
+            'rose': '#E5A9A9',
+            'fuchsia': '#D96690',
+          }
+        }
+      }
+    }
+  </script>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@^19.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+      "react/": "https://aistudiocdn.com/react@^19.2.0/"
+    }
+  }
+  </script>
+</head>
+  <body class="bg-[#FCFBFB]">
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
